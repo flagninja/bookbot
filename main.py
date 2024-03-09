@@ -33,12 +33,9 @@ def format_counts(counts):
         else:
             sort_list.append({"char": c , "count": counts[c]})
     #sort the counts high to low
-    sort_list.sort(reverse=True,key=sort_func)
+    sort_list.sort(reverse=True,key=lambda d : d["count"]) #lambda function to grab counts out of dict
     #print the sorted list with some formatting
     for i in sort_list:
         print(f"the {i["char"]} character appears {i["count"]} times")
-
-def sort_func(dict):
-    return dict["count"]
 
 main()
